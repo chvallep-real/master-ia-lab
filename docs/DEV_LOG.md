@@ -1,0 +1,3 @@
+- Implementado SPEC-001: Validador de préstamos de biblioteca.
+- Código modular y desacoplado creado en `src/validador_prestamo.py`.
+- Pruebas manuales ejecutadas con éxito en consola de PowerShell.
