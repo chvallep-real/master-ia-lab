@@ -7,3 +7,8 @@
 - Creado módulo de excepciones personalizadas en `src/errores.py`.
 - Implementadas entidades inmutables tipadas (`Usuario`, `Libro`) en `src/modelos.py`.
 - Creada suite `tests/test_modelos.py`. Cobertura total: 10/10 tests pasando en verde.
+
+## Sesión 4 - Capa de Aplicación y Casos de Uso
+- Redactado `specs/SPEC-003-caso-de-uso.md`.
+- Creado servicio orquestador `ServicioPrestamo` en `src/casos_de_uso.py`.
+- Suite de pruebas creada en `tests/test_casos_de_uso.py`. Cobertura total: 11/11 tests pasando en verde.
