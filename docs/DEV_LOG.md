@@ -12,3 +12,11 @@
 - Redactado `specs/SPEC-003-caso-de-uso.md`.
 - Creado servicio orquestador `ServicioPrestamo` en `src/casos_de_uso.py`.
 - Suite de pruebas creada en `tests/test_casos_de_uso.py`. Cobertura total: 11/11 tests pasando en verde.
+
+## Sesión 5 - Configuración de .gitignore y Cierre de Semana 1
+- Creado `.gitignore` para omitir `.venv` y carpetas `__pycache__`.
+- Repaso de la arquitectura implementada:
+  - Capa de Dominio (`src/modelos.py`, `src/errores.py`).
+  - Capa de Aplicación / Caso de Uso (`src/casos_de_uso.py`).
+  - Suite de pruebas unitarias con Pytest (11/11 tests en verde).
+- Cobertura de la Semana 1 completada: 10/10 horas realizadas.
