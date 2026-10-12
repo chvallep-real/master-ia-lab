@@ -26,3 +26,9 @@
 - Añadidas excepciones de red (`ErrorConexionAPIError`, `LibroNoEncontradoError`) en `src/errores.py`.
 - Creado cliente HTTP con `httpx` y programación defensiva en `src/cliente_http.py`.
 - Pruebas de integración con API de Open Library ejecutadas con éxito.
+
+## Semana 2 · Sesión 3 - Puerto de Catálogo y Adaptador en Memoria
+- Creada interfaz abstracta `PuertoCatalogoExterno` en `src/puertos.py`.
+- Inyectado el puerto en `ServicioPrestamo` (`src/casos_de_uso.py`) respetando DIP.
+- Creado `AdaptadorCatalogoMemoria` en `src/adaptadores.py` para ejecución desconectada.
+- Suite de pruebas creada en `tests/test_adaptadores.py`. Cobertura total: 14/14 tests pasando en verde.
