@@ -20,3 +20,9 @@
   - Capa de Aplicación / Caso de Uso (`src/casos_de_uso.py`).
   - Suite de pruebas unitarias con Pytest (11/11 tests en verde).
 - Cobertura de la Semana 1 completada: 10/10 horas realizadas.
+
+## Semana 2 · Sesión 1 - Consumo de APIs REST e Integración Externa
+- Redactada especificación `specs/SPEC-004-catalogo-externo.md`.
+- Añadidas excepciones de red (`ErrorConexionAPIError`, `LibroNoEncontradoError`) en `src/errores.py`.
+- Creado cliente HTTP con `httpx` y programación defensiva en `src/cliente_http.py`.
+- Pruebas de integración con API de Open Library ejecutadas con éxito.

@@ -18,3 +18,13 @@ class LibroNoDisponibleError(DominioBibliotecaError):
     """El ejemplar solicitado no se encuentra disponible."""
     def __init__(self, mensaje: str = "El libro no se encuentra disponible."):
         super().__init__(mensaje)
+
+class ErrorConexionAPIError(DominioBibliotecaError):
+    """Fallo de comunicación o tiempo de espera agotado con la API externa."""
+    def __init__(self, mensaje: str = "No se pudo establecer conexión con el servicio externo."):
+        super().__init__(mensaje)
+
+class LibroNoEncontradoError(DominioBibliotecaError):
+    """El ISBN consultado no existe en el catálogo externo."""
+    def __init__(self, mensaje: str = "El libro solicitado no existe en el catálogo."):
+        super().__init__(mensaje)
