@@ -66,3 +66,12 @@
 - Resuelta concurrencia multihilo de SQLite agregando `check_same_thread=False`.
 - Creada suite de integración en `tests/test_api.py` utilizando `TestClient`.
 - Cobertura total del proyecto: 29/29 tests passing en verde.
+
+## Semana 4 · Handlers Globales de Excepciones, CORS Middleware y Robustez API (Horas 36 a 40)
+- Redactada especificación técnica `specs/SPEC-007-handlers-y-cors.md`.
+- Configurado middleware de CORS (`CORSMiddleware`) en `src/api.py` para permitir peticiones cross-origin con credenciales.
+- Implementados manejadores globales de excepciones (`@app.exception_handler`):
+  - HTTP 404 para `UsuarioNoEncontradoError` y `LibroNoEncontradoError`.
+  - HTTP 400 para la clase base `DominioBibliotecaError` (`UsuarioConSancionError`, `LimitePrestamosExcedidoError`, `LibroNoDisponibleError`).
+- Refactorizados los controladores en `src/api.py` desacoplando el manejo de errores HTTP de la definición de rutas.
+- Ampliada la suite `tests/test_api.py` para verificar cabeceras CORS y captura global de errores. Cobertura total: 30/30 tests passing en verde.
