@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from src.api import app, obtener_servicio_prestamo
+from src.api import app
 from src.repositorios import RepositorioUsuarioSQLite
 from src.adaptadores import AdaptadorCatalogoMemoria
 from src.casos_de_uso import ServicioPrestamo
@@ -13,7 +13,7 @@ client = TestClient(app)
 def cliente_test_con_bd_memoria():
     """Sobrescribe la base de datos sqlite por una efímera :memory: para las pruebas."""
     repo = RepositorioUsuarioSQLite(db_path=":memory:")
-    # Registrar un usuario inicial
+    # Registrar usuarios iniciales
     usr = Usuario(id="USR-API-1", nombre="Ana Martínez", prestamos_activos=0)
     repo.guardar(usr)
 
@@ -33,10 +33,23 @@ def test_health_check_endpoint():
     assert response.json() == {"status": "ok"}
 
 
+def test_obtener_libro_por_isbn_exitoso(monkeypatch):
+    monkeypatch.setattr(
+        "src.api.obtener_servicio_prestamo",
+        lambda: ServicioPrestamo(
+            catalogo_externo=AdaptadorCatalogoMemoria(),
+            repo_usuario=RepositorioUsuarioSQLite(db_path=":memory:")
+        )
+    )
+    response = client.get("/libros/9780132350884")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["id"] == "ISBN-9780132350884"
+    assert "Clean Code" in data["titulo"]
+
+
 def test_registrar_prestamo_exitoso(cliente_test_con_bd_memoria, monkeypatch):
     repo = cliente_test_con_bd_memoria
-
-    # Parchear la fábrica del servicio para usar el repo en memoria de la prueba
     monkeypatch.setattr(
         "src.api.obtener_servicio_prestamo",
         lambda: ServicioPrestamo(catalogo_externo=AdaptadorCatalogoMemoria(), repo_usuario=repo)
@@ -87,4 +100,3 @@ def test_registrar_prestamo_usuario_sancionado_devuelve_400(cliente_test_con_bd_
 
     response = client.post("/prestamos", json=payload)
     assert response.status_code == 400
-    

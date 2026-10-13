@@ -9,6 +9,7 @@ from src.errores import (
     UsuarioConSancionError,
     LimitePrestamosExcedidoError,
     LibroNoDisponibleError,
+    LibroNoEncontradoError,
 )
 
 app = FastAPI(
@@ -31,6 +32,23 @@ def check_health():
     return {"status": "ok"}
 
 
+@app.get("/libros/{isbn}", status_code=status.HTTP_200_OK)
+def obtener_libro(isbn: str):
+    """Consulta los datos de un libro en el catálogo externo por su ISBN."""
+    servicio = obtener_servicio_prestamo()
+    try:
+        libro = servicio.obtener_libro_por_isbn(isbn)
+        return {
+            "id": libro.id,
+            "titulo": libro.titulo,
+            "disponible": libro.disponible,
+        }
+    except LibroNoEncontradoError as e:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
+
 @app.post(
     "/prestamos",
     response_model=PrestamoResponseDTO,
@@ -44,7 +62,7 @@ def registrar_prestamo(dto: PrestamoRequestDTO):
         # 1. Recuperar usuario del repositorio
         if not servicio.repo_usuario:
             raise HTTPException(status_code=500, detail="Repositorio no configurado.")
-            
+
         usuario = servicio.repo_usuario.obtener_por_id(dto.usuario_id)
 
         # 2. Instanciar libro a partir del DTO

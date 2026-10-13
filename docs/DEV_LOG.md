@@ -57,3 +57,12 @@
 - Creados endpoints HTTP `/health` y `/prestamos` en `src/api.py` mapeando excepciones de dominio a códigos HTTP (400, 404).
 - Resuelto manejo multihilo de SQLite con `check_same_thread=False` en `src/repositorios.py`.
 - Creada suite `tests/test_api.py` con `TestClient`. Cobertura total: 28/28 tests passing en verde.
+
+## Semana 4 · Capa de Exposición y API REST con FastAPI (Horas 31 a 35)
+- Redactada especificación técnica `specs/SPEC-006-api-rest.md`.
+- Creados DTOs en `src/esquemas.py` (`PrestamoRequestDTO`, `PrestamoResponseDTO`).
+- Implementados endpoints HTTP `/health`, `/libros/{isbn}` y `/prestamos` en `src/api.py`.
+- Mapeadas excepciones de dominio a códigos HTTP estándar (`400 Bad Request`, `404 Not Found`).
+- Resuelta concurrencia multihilo de SQLite agregando `check_same_thread=False`.
+- Creada suite de integración en `tests/test_api.py` utilizando `TestClient`.
+- Cobertura total del proyecto: 29/29 tests passing en verde.
