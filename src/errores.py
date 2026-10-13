@@ -28,3 +28,8 @@ class LibroNoEncontradoError(DominioBibliotecaError):
     """El ISBN consultado no existe en el catálogo externo."""
     def __init__(self, mensaje: str = "El libro solicitado no existe en el catálogo."):
         super().__init__(mensaje)
+
+class UsuarioNoEncontradoError(DominioBibliotecaError):
+    """El ID de usuario consultado no existe en el repositorio."""
+    def __init__(self, mensaje: str = "El usuario solicitado no fue encontrado."):
+        super().__init__(mensaje)

@@ -22,4 +22,20 @@ class PuertoCatalogoExterno(ABC):
         """
         pass
 
-    
+class PuertoRepositorioUsuario(ABC):
+    """Puerto (Interfaz Abstracta) para la gestión de usuarios en almacenamiento."""
+
+    @abstractmethod
+    def guardar(self, usuario) -> None:
+        """Guarda o actualiza una entidad Usuario."""
+        pass
+
+    @abstractmethod
+    def obtener_por_id(self, usuario_id: str):
+        """Obtiene un Usuario por su ID. Lanza UsuarioNoEncontradoError si no existe."""
+        pass
+
+    @abstractmethod
+    def listar_todos(self) -> list:
+        """Retorna la lista de todos los usuarios registrados."""
+        pass
