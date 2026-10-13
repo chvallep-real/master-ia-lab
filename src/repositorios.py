@@ -42,7 +42,8 @@ class RepositorioUsuarioSQLite(PuertoRepositorioUsuario):
 
     def __init__(self, db_path: str = "biblioteca.db"):
         self.db_path = db_path
-        self._conn = sqlite3.connect(self.db_path)
+        # check_same_thread=False permite acceder a la conexión desde los hilos de FastAPI/TestClient
+        self._conn = sqlite3.connect(self.db_path, check_same_thread=False)
         self._inicializar_tabla()
 
     def _inicializar_tabla(self) -> None:
