@@ -75,3 +75,10 @@
   - HTTP 400 para la clase base `DominioBibliotecaError` (`UsuarioConSancionError`, `LimitePrestamosExcedidoError`, `LibroNoDisponibleError`).
 - Refactorizados los controladores en `src/api.py` desacoplando el manejo de errores HTTP de la definición de rutas.
 - Ampliada la suite `tests/test_api.py` para verificar cabeceras CORS y captura global de errores. Cobertura total: 30/30 tests passing en verde.
+
+## Semana 5 · Sesión 1 - Contenerización y DevOps con Docker (Horas 41 y 42)
+- Redactada especificación técnica `specs/SPEC-008-docker.md`.
+- Generado `requirements.txt` y configurado `.dockerignore`.
+- Creado `Dockerfile` multi-capa basado en `python:3.12-slim`.
+- Construida imagen `master-ia-lab:v1.0` y desplegado contenedor `api-biblioteca`.
+- Verificados endpoints REST desde Swagger UI en `http://localhost:8000/docs`.

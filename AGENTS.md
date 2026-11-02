@@ -8,4 +8,4 @@
 ## Entorno
 - Sistema Operativo: Windows.
 - Editor: Visual Studio Code.
-- Formato de Commits: Conventional Commits (feat, fix, docs, chore, test).
+- Formato de Commits: Conventional Commits (feat, fix, docs, chore, test)
