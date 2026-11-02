@@ -102,3 +102,10 @@
 - Resuelta dependencia `pydantic-settings` en `requirements.txt` tras primera auditoría de CI.
 - Validada suite completa de pruebas en la nube de GitHub (runner `ubuntu-latest` con Python 3.12).
 - Cobertura total verificada en CI: 30/30 tests passing en verde.
+
+## Semana 5 · Sesión 4 - Observabilidad y Logging Estructurado (Horas 47 y 48)
+- Redactada especificación técnica `specs/SPEC-011-logging.md`.
+- Creado módulo `src/logger.py` con `JSONFormatter` e ISO 8601 timestamps.
+- Migrados eventos de startup a `lifespan` context manager en `src/api.py`.
+- Integrado logger estructurado en handlers globales de excepciones y endpoints.
+- Suite de pruebas mantenida al 100%: 30/30 tests passing en verde.
