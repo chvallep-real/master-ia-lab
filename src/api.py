@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, status, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from src.config import settings
 from src.esquemas import PrestamoRequestDTO, PrestamoResponseDTO
 from src.modelos import Libro
 from src.casos_de_uso import ServicioPrestamo
@@ -14,9 +15,10 @@ from src.errores import (
 )
 
 app = FastAPI(
-    title="API Biblioteca Municipal",
+    title=settings.APP_NAME,
     description="Interfaz REST basada en Clean Architecture y Puertos & Adaptadores",
     version="1.1.0",
+    debug=settings.DEBUG,
 )
 
 # 1. Configuración de Middleware CORS

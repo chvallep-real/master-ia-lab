@@ -12,3 +12,7 @@ __pycache__/
 .pytest_cache/
 .vscode/
 .DS_Store
+
+# Variables de entorno e información sensible
+.env
+.env.*

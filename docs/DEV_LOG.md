@@ -82,3 +82,11 @@
 - Creado `Dockerfile` multi-capa basado en `python:3.12-slim`.
 - Construida imagen `master-ia-lab:v1.0` y desplegado contenedor `api-biblioteca`.
 - Verificados endpoints REST desde Swagger UI en `http://localhost:8000/docs`.
+
+## Semana 5 · Sesión 2 - Configuración Defensiva con pydantic-settings (Horas 43 y 44)
+- Redactada especificación técnica `specs/SPEC-009-configuracion.md`.
+- Instalada librería `pydantic-settings` en el entorno virtual.
+- Creada clase `Configuracion` en `src/config.py` y archivo `.env`.
+- Conectadas variables de entorno defensivas en `src/api.py` (`APP_NAME`, `DEBUG`).
+- Ignorado archivo `.env` en `.gitignore` para protección de secretos.
+- Suite de pruebas pasando al 100% (30/30 tests passing).
