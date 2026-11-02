@@ -95,3 +95,10 @@
 - Redactada especificación técnica `specs/SPEC-010-ci-cd.md`.
 - Creado workflow `.github/workflows/ci.yml` para ejecución automática de tests en GitHub Actions.
 - Validado flujo de CI en la nube sobre Python 3.12.
+
+## Semana 5 · Sesión 3 - Integración Continua (CI) con GitHub Actions (Horas 45 y 46)
+- Redactada especificación técnica `specs/SPEC-010-ci-cd.md`.
+- Creado workflow `.github/workflows/ci.yml` configurado para eventos `push` y `pull_request` en la rama `main`.
+- Resuelta dependencia `pydantic-settings` en `requirements.txt` tras primera auditoría de CI.
+- Validada suite completa de pruebas en la nube de GitHub (runner `ubuntu-latest` con Python 3.12).
+- Cobertura total verificada en CI: 30/30 tests passing en verde.
