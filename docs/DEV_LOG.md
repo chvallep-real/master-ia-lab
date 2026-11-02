@@ -90,3 +90,8 @@
 - Conectadas variables de entorno defensivas en `src/api.py` (`APP_NAME`, `DEBUG`).
 - Ignorado archivo `.env` en `.gitignore` para protección de secretos.
 - Suite de pruebas pasando al 100% (30/30 tests passing).
+
+## Semana 5 · Sesión 3 - Integración Continua (CI) con GitHub Actions (Horas 45 y 46)
+- Redactada especificación técnica `specs/SPEC-010-ci-cd.md`.
+- Creado workflow `.github/workflows/ci.yml` para ejecución automática de tests en GitHub Actions.
+- Validado flujo de CI en la nube sobre Python 3.12.
