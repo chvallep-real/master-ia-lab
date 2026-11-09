@@ -109,3 +109,8 @@
 - Migrados eventos de startup a `lifespan` context manager en `src/api.py`.
 - Integrado logger estructurado en handlers globales de excepciones y endpoints.
 - Suite de pruebas mantenida al 100%: 30/30 tests passing en verde.
+
+## Semana 6 · Sesión 1 - Pruebas Avanzadas y Cobertura (Horas 51 y 52)
+- Redactada la especificación técnica `specs/SPEC-012-cobertura-mocks.md`.
+- Instalado `pytest-cov` para auditoría de cobertura de código.
+- Preparación de fixtures y mocks para aislar servicios de red en los tests.
