@@ -65,4 +65,5 @@ def test_fallo_red_o_timeout_lanza_error_conexion(mock_get):
 
     with pytest.raises(ErrorConexionAPIError):
         cliente.consultar_libro("9780132350884")
+
         
