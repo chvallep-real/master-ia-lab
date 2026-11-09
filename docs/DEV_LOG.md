@@ -115,3 +115,16 @@
 - Instalado `pytest-cov` para auditoría de cobertura de código.
 - Preparación de fixtures y mocks para aislar servicios de red en los tests.
 - Ejecutado el primer reporte de auditoría con un resultado de **88% de cobertura total** y 30/30 tests pasando en verde.
+
+## Semana 6 · Sesión 2 - Mocks de Puertos y Arquitectura Hexagonal (Horas 53 y 54)
+- Redactada la especificación técnica `specs/SPEC-013-mocks-puertos.md`.
+- Inmunización de la capa de aplicación (`src/casos_de_uso.py`) probando con Mocks sobre interfaces abstractas.
+- Creada suite `tests/test_mocks_puertos.py` aislando el servicio `ServicioPrestamo` mediante `MagicMock` de puertos abstractos.
+- Verificada la interacción y verificación de comportamientos con llamadas a repositorios simulados.
+- Cobertura global mantenida al 88% con 32 tests passing en verde.
+
+## Semana 6 · Sesión 3 - Fixtures Avanzadas y Parametrización (Horas 55 y 56)
+- Redactada la especificación técnica `specs/SPEC-014-fixtures-parametrizacion.md`.
+- Creado archivo central `tests/conftest.py` con fixtures compartidas de entidades y repositorios.
+- Refactorizadas y ampliadas las pruebas en `tests/test_parametrizados.py` utilizando `@pytest.mark.parametrize`.
+- Cobertura global mantenida al 88% con 32 tests passing en verde.
