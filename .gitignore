@@ -13,6 +13,12 @@ __pycache__/
 .vscode/
 .DS_Store
 
+# Archivos y reportes de cobertura de código
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+
 # Variables de entorno e información sensible
 .env
 .env.*
