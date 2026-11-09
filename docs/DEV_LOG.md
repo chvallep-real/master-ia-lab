@@ -128,3 +128,9 @@
 - Creado archivo central `tests/conftest.py` con fixtures compartidas de entidades y repositorios.
 - Refactorizadas y ampliadas las pruebas en `tests/test_parametrizados.py` utilizando `@pytest.mark.parametrize`.
 - Cobertura global mantenida al 88% con 32 tests passing en verde.
+
+## Semana 6 · Sesión 4 - Excepciones Personalizadas, Manejo Global y Resiliencia en la API (Horas 57 y 58)
+- Redactada especificación técnica `specs/SPEC-015-excepciones-resiliencia.md`.
+- Refactorizado `src/api.py` integrando manejadores globales de excepciones (`@app.exception_handler`) para mapear errores de dominio a respuestas HTTP 400 y 404 estandarizadas con JSON estructurado.
+- Verificada la captura defensiva de `DominioBibliotecaError` evitando fallos no controlados (HTTP 500).
+- Suite de pruebas mantenida al 100%: 32/32 tests passing en verde con 88% de cobertura en `src/`.
