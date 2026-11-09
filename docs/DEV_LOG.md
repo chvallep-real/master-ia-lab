@@ -114,3 +114,4 @@
 - Redactada la especificación técnica `specs/SPEC-012-cobertura-mocks.md`.
 - Instalado `pytest-cov` para auditoría de cobertura de código.
 - Preparación de fixtures y mocks para aislar servicios de red en los tests.
+- Ejecutado el primer reporte de auditoría con un resultado de **88% de cobertura total** y 30/30 tests pasando en verde.
